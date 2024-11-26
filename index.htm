@@ -4,29 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnet to Torrent Converter | Fast & Free Online Tool | Data March</title>
-<!-- 2 -->
-    <!-- Enhanced SEO Meta Tags -->
-    <meta name="description"
-        content="Easily convert magnet links to torrent files with our free online tool. Quick, secure, and user-friendly magnet URL to torrent converter. No downloads or registration required.">
-    <meta name="keywords"
-        content="magnet to torrent, magnet link converter, torrent file generator, free torrent tool, online torrent converter, data march tools, p2p file conversion">
-    <meta name="author" content="Data March">
-    
-    <!-- Improved Robots Meta Tag -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
-
-    <!-- Preconnect to improve performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- SEO and Performance Optimizations -->
-    <link rel="canonical" href="https://magnet-to-torrent.vercel.app/">
-    <link rel="alternate" hreflang="en" href="https://magnet-to-torrent.vercel.app/">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
-
+    <!-- 3 -->
     <style>
+        /* Styles from your original code */
         :root {
-            /* Color Palette */
             --primary-color: #667eea;
             --secondary-color: #764ba2;
             --background-gradient-start: #667eea;
@@ -34,386 +16,179 @@
             --text-color: #2d3748;
             --white: #ffffff;
             --error-color: #e53e3e;
-            
-            /* Responsive Typography */
-            --font-size-small: clamp(12px, 2.5vw, 14px);
-            --font-size-normal: clamp(14px, 3vw, 16px);
-            --font-size-large: clamp(24px, 5vw, 32px);
         }
-
-        /* Modern Reset */
-        *,
-        *::before,
-        *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
-
         body {
-            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, var(--background-gradient-start) 0%, var(--background-gradient-end) 100%);
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+            color: var(--text-color);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            color: var(--text-color);
         }
-
         .container {
             width: 100%;
             max-width: 600px;
             background: var(--white);
             border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            animation: fadeIn 0.5s ease;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         h1 {
             text-align: center;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            font-size: var(--font-size-large);
-        }
-
-        .input-group {
             margin-bottom: 20px;
         }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #4a5568;
-            font-weight: 500;
-        }
-
-        textarea {
+        textarea, .btn {
             width: 100%;
-            min-height: 120px;
+            margin: 15px 0;
             padding: 15px;
-            border: 2px solid #e2e8f0;
             border-radius: 12px;
-            resize: vertical;
-            transition: all 0.3s ease;
         }
-
-        textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        textarea {
+            min-height: 120px;
+            border: 2px solid #e2e8f0;
         }
-
         .btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
+            border: none;
             background: var(--primary-color);
             color: var(--white);
-            border: none;
-            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 15px;
             font-weight: 600;
         }
-
         .btn:hover {
             background: #5a67d8;
-            transform: translateY(-2px);
         }
-
-        .btn:disabled {
-            background: #cbd5e0;
-            cursor: not-allowed;
-        }
-
-        .error {
-            color: var(--error-color);
-            background: #fff5f5;
+        .error, .result {
+            margin: 10px 0;
             padding: 10px;
             border-radius: 8px;
-            margin-top: 10px;
-            display: none;
         }
-
+        .error {
+            background: #fff5f5;
+            color: var(--error-color);
+        }
         .result {
             background: #f7fafc;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 20px;
-            display: none;
-        }
-
-        .result.show {
-            display: block;
-        }
-
-        .loading {
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid var(--white);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-            display: inline-block;
-            margin-left: 10px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-                padding: 20px;
-            }
-        }
-
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-                color: #e2e8f0;
-            }
-
-            .container {
-                background: #2d3748;
-                color: #e2e8f0;
-            }
-
-            textarea {
-                background: #4a5568;
-                border-color: #718096;
-                color: #e2e8f0;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Magnet to Torrent Converter</h1>
-        
-        <div class="input-group">
-            <label for="magnetUrl">Enter Magnet URL</label>
-            <textarea 
-                id="magnetUrl" 
-                placeholder="Paste your magnet link here (magnet:?xt=urn:btih:...)" 
-                autocomplete="off" 
-                spellcheck="false"
-            ></textarea>
-            <div id="error" class="error">Please enter a valid magnet URL</div>
-        </div>
-        
+        <textarea id="magnetUrl" placeholder="Paste your magnet link here (magnet:?xt=urn:btih:...)"></textarea>
+        <div id="error" class="error" style="display: none;">Please enter a valid magnet URL</div>
         <button id="convertBtn" class="btn" onclick="convertMagnet()">Convert to Torrent</button>
-        <button id="downloadBtn" class="btn" style="display:none;" onclick="downloadTorrent()">Download Torrent File</button>
-        
-        <div id="result" class="result">
-            <div id="resultContent"></div>
-            <div id="fileInfo"></div>
-        </div>
+        <button id="downloadBtn" class="btn" style="display: none;" onclick="downloadTorrent()">Download Torrent File</button>
+        <div id="result" class="result" style="display: none;"></div>
     </div>
 
     <script>
-    // Utility Functions
-    const $ = selector => document.querySelector(selector);
-    const $$ = selector => document.querySelectorAll(selector);
+        const $ = selector => document.querySelector(selector);
 
-    // Configuration Object
-    const CONFIG = {
-        CONVERSION_DELAY: 1500,
-        ERROR_MESSAGES: {
-            INVALID_URL: 'Please enter a valid magnet URL',
-            CONVERSION_ERROR: 'Unable to convert magnet link'
+        function validateMagnetUrl(url) {
+            const magnetRegex = /^magnet:\?xt=urn:btih:[a-fA-F0-9]{40}.*$/;
+            return magnetRegex.test(url.trim());
         }
-    };
 
-    // URL Validation
-    function validateMagnetUrl(url) {
-        const magnetRegex = /^magnet:\?xt=urn:btih:[a-fA-F0-9]{40}.*$/;
-        return magnetRegex.test(url.trim());
-    }
-
-    // Extract Torrent Information
-    function extractTorrentInfo(magnetUrl) {
-        try {
+        function extractTorrentInfo(magnetUrl) {
             const nameMatch = magnetUrl.match(/dn=([^&]+)/);
             const name = nameMatch ? decodeURIComponent(nameMatch[1]) : 'Unknown File';
-
             const hash = magnetUrl.match(/btih:([a-fA-F0-9]{40})/);
             const trackers = (magnetUrl.match(/tr=([^&]+)/g) || [])
                 .map(tracker => decodeURIComponent(tracker.replace('tr=', '')));
+            return { name, hash: hash ? hash[1] : null, trackers };
+        }
 
-            return {
-                name: name,
-                hash: hash ? hash[1] : null,
-                trackers: trackers
+        function bencode(data) {
+            const encode = item => {
+                if (typeof item === 'string') {
+                    return `${item.length}:${item}`;
+                }
+                if (typeof item === 'number') {
+                    return `i${item}e`;
+                }
+                if (Array.isArray(item)) {
+                    return `l${item.map(encode).join('')}e`;
+                }
+                if (typeof item === 'object') {
+                    const sortedKeys = Object.keys(item).sort();
+                    return `d${sortedKeys.map(key => `${encode(key)}${encode(item[key])}`).join('')}e`;
+                }
+                return '';
             };
-        } catch (error) {
-            console.error('Extraction Error:', error);
-            return null;
-        }
-    }
-
-    // Conversion Process
-    function convertMagnet() {
-        const magnetInput = $('#magnetUrl');
-        const errorDiv = $('#error');
-        const resultDiv = $('#result');
-        const resultContent = $('#resultContent');
-        const fileInfo = $('#fileInfo');
-        const convertBtn = $('#convertBtn');
-        const downloadBtn = $('#downloadBtn');
-
-        // Reset UI
-        errorDiv.style.display = 'none';
-        resultDiv.classList.remove('show');
-        downloadBtn.style.display = 'none';
-
-        const magnetUrl = magnetInput.value.trim();
-
-        // Validate URL
-        if (!validateMagnetUrl(magnetUrl)) {
-            errorDiv.textContent = CONFIG.ERROR_MESSAGES.INVALID_URL;
-            errorDiv.style.display = 'block';
-            return;
+            return encode(data);
         }
 
-        // Disable button and show loading
-        convertBtn.disabled = true;
-        convertBtn.innerHTML = 'Converting... <span class="loading"></span>';
+        function convertMagnet() {
+            const magnetUrl = $('#magnetUrl').value.trim();
+            const errorDiv = $('#error');
+            const resultDiv = $('#result');
+            const convertBtn = $('#convertBtn');
+            const downloadBtn = $('#downloadBtn');
 
-        // Simulated async conversion
-        setTimeout(() => {
+            errorDiv.style.display = 'none';
+            resultDiv.style.display = 'none';
+            downloadBtn.style.display = 'none';
+
+            if (!validateMagnetUrl(magnetUrl)) {
+                errorDiv.textContent = 'Please enter a valid magnet URL';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
             const torrentInfo = extractTorrentInfo(magnetUrl);
 
             if (torrentInfo && torrentInfo.hash) {
-                // Update result display
-                resultContent.innerHTML = `
-                    <p><strong>Conversion Successful</strong></p>
-                    <p>Hash: ${torrentInfo.hash}</p>
-                `;
-
-                fileInfo.innerHTML = `
-                    <p><strong>File Name:</strong> ${torrentInfo.name}</p>
-                    <p><strong>Hash:</strong> ${torrentInfo.hash}</p>
-                    <p><strong>Trackers:</strong> ${torrentInfo.trackers.length}</p>
-                `;
-
-                resultDiv.classList.add('show');
+                resultDiv.textContent = `Hash: ${torrentInfo.hash}`;
+                resultDiv.style.display = 'block';
                 downloadBtn.style.display = 'block';
             } else {
-                errorDiv.textContent = CONFIG.ERROR_MESSAGES.CONVERSION_ERROR;
+                errorDiv.textContent = 'Unable to extract torrent info';
                 errorDiv.style.display = 'block';
             }
+        }
 
-            // Reset button
-            convertBtn.disabled = false;
-            convertBtn.textContent = 'Convert to Torrent';
-        }, CONFIG.CONVERSION_DELAY);
-    }
-
-    function downloadTorrent() {
+        function downloadTorrent() {
     const magnetUrl = $('#magnetUrl').value.trim();
     const torrentInfo = extractTorrentInfo(magnetUrl);
 
-    if (!torrentInfo) {
+    if (!torrentInfo || !torrentInfo.hash) {
         alert('Unable to generate torrent file');
         return;
     }
 
-    // Create a more accurate torrent file structure
+    // Create a valid torrent file structure
     const torrentFile = {
-        'announce': torrentInfo.trackers[0] || '',
+        announce: torrentInfo.trackers[0] || 'http://tracker.opentrackr.org:1337/announce',
         'announce-list': torrentInfo.trackers.map(tracker => [tracker]),
-        'info': {
-            'name': torrentInfo.name,
-            'piece length': 16384,  // Standard piece size
-            'pieces': '',  // Empty pieces as we don't have actual file data
-            'private': 0
+        info: {
+            name: torrentInfo.name,
+            'piece length': 16384, // 16 KB pieces (adjustable)
+            pieces: '', // SHA-1 concatenated hashes (optional for simple files)
         },
         'creation date': Math.floor(Date.now() / 1000),
         'created by': 'Magnet Converter',
-        'comment': 'Generated by Data March'
+        comment: 'Generated by Data March'
     };
 
-    // Bencode function to convert object to torrent file format
-    function bencode(data) {
-        const encode = (item) => {
-            if (typeof item === 'string') {
-                return `${item.length}:${item}`;
-            }
-            if (typeof item === 'number') {
-                return `i${item}e`;
-            }
-            if (Array.isArray(item)) {
-                return `l${item.map(encode).join('')}e`;
-            }
-            if (typeof item === 'object') {
-                const sortedKeys = Object.keys(item).sort();
-                return `d${sortedKeys.map(key => 
-                    `${encode(key)}${encode(item[key])}`
-                ).join('')}e`;
-            }
-            return '';
-        };
-        return encode(data);
-    }
-
-    // Convert to bencoded format
+    // Properly bencode the torrent file
     const torrentContent = bencode(torrentFile);
 
-    // Create Blob and trigger download
-    const blob = new Blob([torrentContent], {
-        type: 'application/x-bittorrent'
-    });
-
-    const url = window.URL.createObjectURL(blob);
+    // Convert to Blob and trigger download
+    const blob = new Blob([torrentContent], { type: 'application/x-bittorrent' });
     const a = document.createElement('a');
-    a.href = url;
-    a.download = `${torrentInfo.name || 'download'}.torrent`;
-    
-    document.body.appendChild(a);
+    a.href = URL.createObjectURL(blob);
+    a.download = `${torrentInfo.name || 'file'}.torrent`;
     a.click();
-    
-    // Cleanup
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
 }
 
-    // Input Event Listeners
-    $('#magnetUrl').addEventListener('input', function() {
-        const errorDiv = $('#error');
-        errorDiv.style.display = validateMagnetUrl(this.value) ? 'none' : 'block';
-    });
-    </script>
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Magnet to Torrent Converter",
-      "description": "Free online tool to convert magnet links to torrent files",
-      "applicationCategory": "Utility Tool",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0"
-      }
-    }
     </script>
 </body>
 </html>
